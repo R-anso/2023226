@@ -16,34 +16,39 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ../../Qt/5.14.0/project/CircleDialog/circledialog.cpp \
     about.cpp \
     addnew.cpp \
-    appremind.cpp \
-    editdialog.cpp \
+    ball.cpp \
     history.cpp \
     main.cpp \
     dialog.cpp \
     note.cpp \
+    settingdia.cpp \
+    suspenddia.cpp \
     vector_.cpp
 
 HEADERS += \
+    ../../Qt/5.14.0/project/CircleDialog/circledialog.h \
     about.h \
     addnew.h \
-    appremind.h \
+    ball.h \
     dialog.h \
-    editdialog.h \
     history.h \
     note.h \
+    settingdia.h \
+    suspenddia.h \
     vector_.h
 
 FORMS += \
     about.ui \
     addnew.ui \
-    appremind.ui \
+    ball.ui \
     dialog.ui \
-    editdialog.ui \
     history.ui \
-    note.ui
+    note.ui \
+    settingdia.ui \
+    suspenddia.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -3,7 +3,7 @@
 #include "note.h"
 #include <QDialog>
 #include "dialog.h"
-
+//static QString *str_name;
 namespace Ui
 {
     class Addnew;
@@ -22,9 +22,6 @@ public:
 
 public slots:
     void on_pushButton_clicked();
-
-private slots:
-    void on_checkBox_stateChanged(int arg1);
 
 private:
     Ui::Addnew *ui;
