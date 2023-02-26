@@ -11,16 +11,14 @@ void Vector_::vector_for_file(std::vector<Note *> note_vector)
         if(file.open(QIODevice::WriteOnly| QIODevice::Text))
         {
             QTextStream stream(&file);
-            for(int i=0;i<note_vector.size();i++)
+            for(int i=0;i < note_vector.size();i++)
             {
                 stream<<note_vector.at(i)->finish<<" ";
                 stream<<note_vector.at(i)->Thing<<" ";
                 stream<<note_vector.at(i)->Time<<" ";
                 stream<<note_vector.at(i)->Date<<" ";
                 stream<<note_vector.at(i)->ddl<<" ";
-                stream<<note_vector.at(i)->note<<" ";
-                stream<<note_vector.at(i)->repeat_times<<" ";
-                stream<<note_vector.at(i)->repeat_gap<<" #\n";
+                stream<<note_vector.at(i)->note<<" "<<"#\n";  //n n n n n n #\n
                 //
             }
         }
