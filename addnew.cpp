@@ -2,28 +2,29 @@
 #include "ui_addnew.h"
 #include <QDebug>
 #include <QFile>
-#include "dialog.h"
-#include "vector_.h"
 #include <QDate>
 #include <QTime>
-//Addnew::Addnew(QWidget *parent) :
-//    QDialog(parent),
-//    ui(new Ui::Addnew)
-//{
-//    ui->setupUi(this);
-//}
+#include "dialog.h"
+#include "vector_.h"
+
 Addnew::Addnew(std::vector<Note*> *note_vector) :
         ui(new Ui::Addnew)
 
 {
+    QPalette pa;
+    pa.setColor(QPalette::Background,QColor(255,255,200,180));
+    this->setAutoFillBackground(true);      //背景
+    this->setPalette(pa);
+    //
+
     ui->setupUi(this);
-    this->note_vector1=note_vector;
+    this->note_vector1 = note_vector;
 
     ui->label_4->hide();
     ui->spinBox->hide();
     ui->comboBox_2->hide();
 
-    //  belows writen by shuc22 on 2023/2/7 for achieving adding 10min for a note
+    // belows writen by shuc22 on 2023/2/7 for achieving adding 10min for a note
     QDate date;
     date = QDate::currentDate();
     QString datestr = date.toString("yyyy/MM/dd");
@@ -315,9 +316,8 @@ void Addnew::on_pushButton_clicked()
     close();
 }
 
-void Addnew::on_checkBox_stateChanged(int arg1)
+void Addnew::on_checkBox_stateChanged(int)
 {
-    arg1 = 0;
     if(ui->checkBox->checkState()==Qt::Unchecked)
     {
         ui->label_4->hide();
